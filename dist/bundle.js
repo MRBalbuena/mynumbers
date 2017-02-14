@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -82,6 +82,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var React = __webpack_require__(0);
+var GroceryList_1 = __webpack_require__(3);
 // 'HelloProps' describes the shape of props.
 // State is never set so we use the 'undefined' type.
 var Hello = (function (_super) {
@@ -90,12 +91,14 @@ var Hello = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Hello.prototype.render = function () {
-        return React.createElement("h1", null,
-            "Hello from ",
-            this.props.compiler,
-            " and ",
-            this.props.framework,
-            "!");
+        return (React.createElement("div", null,
+            React.createElement("h1", null,
+                "Hello from ",
+                this.props.compiler,
+                " and ",
+                this.props.framework,
+                "!"),
+            React.createElement(GroceryList_1.GroceryList, null)));
     };
     return Hello;
 }(React.Component));
@@ -117,6 +120,49 @@ module.exports = ReactDOM;
 
 /***/ },
 /* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var React = __webpack_require__(0);
+;
+var GroceryList = (function (_super) {
+    __extends(GroceryList, _super);
+    function GroceryList() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    GroceryList.prototype.render = function () {
+        return (React.createElement("ul", null,
+            React.createElement(ListItem, { quantity: "1", name: "Bread" }),
+            React.createElement(ListItem, { quantity: "6", name: "Eggs" }),
+            React.createElement(ListItem, { quantity: "7", name: "Milk" })));
+    };
+    return GroceryList;
+}(React.Component));
+exports.GroceryList = GroceryList;
+var ListItem = (function (_super) {
+    __extends(ListItem, _super);
+    function ListItem() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ListItem.prototype.render = function () {
+        return (React.createElement("li", null,
+            this.props.quantity,
+            " x ",
+            this.props.name));
+    };
+    return ListItem;
+}(React.Component));
+exports.ListItem = ListItem;
+
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
