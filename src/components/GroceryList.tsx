@@ -8,7 +8,7 @@ export class GroceryList extends React.Component<IGroceryList, undefined> {
             <ul>
                 <ListItem quantity="1" name="Bread" />
                 <ListItem quantity="6" name="Eggs" />
-                <ListItem quantity="7" name="Milk" />
+                <ListItem quantity="8" name="Milk" />
             </ul>
         );
     }

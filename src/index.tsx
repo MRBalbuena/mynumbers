@@ -2,8 +2,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { Hello } from "./components/Hello";
+import {MyNumbers} from "./components/MyNumbers";
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("example")
+    <MyNumbers title="My Numbers" />,
+    document.getElementById("root")
 );
