@@ -88,7 +88,8 @@ var MyNumbers = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MyNumbers.prototype.render = function () {
-        return (React.createElement("h1", null, this.props.title));
+        return (React.createElement("div", { className: "jumbotron" },
+            React.createElement("h1", null, this.props.title)));
     };
     return MyNumbers;
 }(React.Component));
@@ -110,7 +111,7 @@ module.exports = ReactDOM;
 var React = __webpack_require__(0);
 var ReactDOM = __webpack_require__(2);
 var MyNumbers_1 = __webpack_require__(1);
-ReactDOM.render(React.createElement(MyNumbers_1.MyNumbers, { title: "My Numbers" }), document.getElementById("example"));
+ReactDOM.render(React.createElement(MyNumbers_1.MyNumbers, { title: "My Numbers" }), document.getElementById("root"));
 
 
 /***/ }
