@@ -1,8 +1,12 @@
 var gulp = require("gulp");
 var nodemon = require("gulp-nodemon");
 var webpack = require("webpack");
+var less = require('gulp-less');
+var path = require('path');
 
-gulp.task('default', function() {
+gulp.task('default', ['test', 'less', 'nodemon']);
+
+gulp.task('nodemon', function() {
     nodemon({
             script: 'app.ts',
             ext: 'ts',
@@ -14,4 +18,14 @@ gulp.task('default', function() {
         .on('restart', function() {
             console.log('Restarting...');
         });
+});
+
+gulp.task('less', function() {
+    return gulp.src('./src/less/**/*.less')
+        .pipe(less())
+        .pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('test', function() {
+    console.log('going through gulp');
 });

@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -82,14 +82,17 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var React = __webpack_require__(0);
+var MenuContainer_1 = __webpack_require__(3);
 var MyNumbers = (function (_super) {
     __extends(MyNumbers, _super);
     function MyNumbers() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MyNumbers.prototype.render = function () {
-        return (React.createElement("div", { className: "jumbotron" },
-            React.createElement("h1", null, this.props.title)));
+        return (React.createElement("div", { className: "mainContainer" },
+            React.createElement("div", { className: "titleBlock" },
+                React.createElement("h1", null, this.props.title)),
+            React.createElement(MenuContainer_1.MenuContainer, null)));
     };
     return MyNumbers;
 }(React.Component));
@@ -104,6 +107,38 @@ module.exports = ReactDOM;
 
 /***/ },
 /* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var React = __webpack_require__(0);
+;
+var MenuContainer = (function (_super) {
+    __extends(MenuContainer, _super);
+    function MenuContainer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MenuContainer.prototype.render = function () {
+        return (React.createElement("div", null,
+            React.createElement("div", { className: "container" },
+                React.createElement("div", { className: "menuBlock" }, "Left top"),
+                React.createElement("div", { className: "menuBlock" }, "Right Top")),
+            React.createElement("div", { className: "container" },
+                React.createElement("div", { className: "menuBlock" }, "Right Top"),
+                React.createElement("div", { className: "menuBlock" }, "Right Top"))));
+    };
+    return MenuContainer;
+}(React.Component));
+exports.MenuContainer = MenuContainer;
+
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
