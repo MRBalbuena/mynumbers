@@ -1,5 +1,5 @@
 import * as React from "react";
-import {MenuContainer} from "./MenuContainer";
+import {MainMenuContainer} from "./MainMenuContainer";
 export interface IMyNumbers {
     title: string;
 }
@@ -11,7 +11,7 @@ export class MyNumbers extends React.Component<IMyNumbers, never>{
                 <div className="titleBlock">
                     <h1>{this.props.title}</h1>
                 </div>
-                <MenuContainer />
+                <MainMenuContainer />
             </div>
         );
     }
