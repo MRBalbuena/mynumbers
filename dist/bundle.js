@@ -82,7 +82,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var React = __webpack_require__(0);
-var MenuContainer_1 = __webpack_require__(3);
+var MainMenuContainer_1 = __webpack_require__(3);
 var MyNumbers = (function (_super) {
     __extends(MyNumbers, _super);
     function MyNumbers() {
@@ -92,7 +92,7 @@ var MyNumbers = (function (_super) {
         return (React.createElement("div", { className: "mainContainer" },
             React.createElement("div", { className: "titleBlock" },
                 React.createElement("h1", null, this.props.title)),
-            React.createElement(MenuContainer_1.MenuContainer, null)));
+            React.createElement(MainMenuContainer_1.MainMenuContainer, null)));
     };
     return MyNumbers;
 }(React.Component));
@@ -117,24 +117,29 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var React = __webpack_require__(0);
-;
-var MenuContainer = (function (_super) {
-    __extends(MenuContainer, _super);
-    function MenuContainer() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var MainMenuContainer = (function (_super) {
+    __extends(MainMenuContainer, _super);
+    function MainMenuContainer() {
+        var _this = _super.call(this) || this;
+        _this.navigateTo = function () {
+            console.log(_this.state.visible);
+            _this.setState({ visible: !_this.state.visible });
+        };
+        _this.state = { visible: true };
+        return _this;
     }
-    MenuContainer.prototype.render = function () {
+    MainMenuContainer.prototype.render = function () {
         return (React.createElement("div", null,
             React.createElement("div", { className: "container" },
-                React.createElement("div", { className: "menuBlock" }, "Left top"),
-                React.createElement("div", { className: "menuBlock" }, "Right Top")),
+                React.createElement("div", { className: "menuBlock", onClick: this.navigateTo.bind(this) }, "Accounts"),
+                React.createElement("div", { className: "menuBlock" }, "Groups")),
             React.createElement("div", { className: "container" },
-                React.createElement("div", { className: "menuBlock" }, "Right Top"),
-                React.createElement("div", { className: "menuBlock" }, "Right Top"))));
+                React.createElement("div", { className: "menuBlock" }, "Movements"),
+                React.createElement("div", { className: "menuBlock" }, "Statistics"))));
     };
-    return MenuContainer;
+    return MainMenuContainer;
 }(React.Component));
-exports.MenuContainer = MenuContainer;
+exports.MainMenuContainer = MainMenuContainer;
 
 
 /***/ },

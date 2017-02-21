@@ -1,8 +1,5 @@
 import * as React from "react";
 import {MainMenuContainer} from "./MainMenuContainer";
-export interface IMyNumbers {
-    title: string;
-}
 
 export class MyNumbers extends React.Component<IMyNumbers, never>{
     render() {

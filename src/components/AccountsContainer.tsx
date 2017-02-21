@@ -1,10 +1,6 @@
+/// <reference path="./Interfaces.d.ts" />
+
 import * as React from 'react';
-
-export interface IAccountsContainer {};
-
-export interface IAccountContainerState{
-    visible: boolean;
-}
 
 export class AccountsContainer extends React.Component < IAccountsContainer,IAccountContainerState > {
     public state: IAccountContainerState;

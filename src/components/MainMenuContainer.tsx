@@ -1,13 +1,21 @@
 import * as React from 'react';
 
-export interface IMainMenuContainer {};
+export class MainMenuContainer extends React.Component < IMainMenuContainer,IMainMenuContainerState > {
+    public state: IMainMenuContainerState;
+    constructor(){
+        super();
+        this.state = {visible: true};
+    }
+    navigateTo = () => {
+        console.log(this.state.visible);
+        this.setState({visible: !this.state.visible});
+    }
 
-export class MainMenuContainer extends React.Component < IMainMenuContainer,never > {
-    render() {
+    render() {        
         return (
             <div>
                 <div className="container">
-                    <div className="menuBlock">Accounts</div>
+                    <div className="menuBlock" onClick={this.navigateTo.bind(this)}>Accounts</div>
                     <div className="menuBlock">Groups</div>
                 </div>
                 <div className="container">
