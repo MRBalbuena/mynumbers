@@ -1,14 +1,21 @@
-interface IAccountsContainer {}
 
-interface IAccountContainerState extends IHiddableComponent {}
+interface IMainMenuContainer extends IContainer{}
+interface IMainMenuContainerState extends IContainer{}    
 
-interface IMainMenuContainer{}
-interface IMainMenuContainerState extends IHiddableComponent{}
+interface IMenuContainer{}
 
-interface IHiddableComponent {
-    visible : boolean;
+interface IContainer{
+    currentModule: string;
 }
 
-interface IMyNumbers {
+interface IMyNumbersComponent {    
     title : string;
 }
+
+interface IMyNumbersState{
+    currentModule: string;
+}
+
+interface IAccountsContainer {}
+
+interface IAccountContainerState {}
