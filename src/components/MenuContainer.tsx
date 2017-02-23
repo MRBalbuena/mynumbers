@@ -7,19 +7,19 @@ export class MenuContainer extends React.Component<IMenuContainer, IMainMenuCont
         super();
         this.state = {currentModule: ''};
     }
-    navigateTo = () => {
-        this.setState({ currentModule: 'accounts' });
+    navigateTo = (selectedBlock: string) => {
+        this.setState({ currentModule: selectedBlock });
     }
     render() {
         if (!this.state.currentModule)
         return <div>
             <div className="container">
-                <div className="menuBlock" onClick={this.navigateTo.bind(this)}>Accounts</div>
-                <div className="menuBlock">Groups</div>
+                <div className="menuBlock" onClick={this.navigateTo.bind(this, 'accounts')}>Accounts</div>
+                <div className="menuBlock" onClick={this.navigateTo.bind(this, 'groups')}>Groups</div>
             </div>
             <div className="container">
-                <div className="menuBlock">Movements</div>
-                < div className="menuBlock">Statistics</div>
+                <div className="menuBlock" onClick={this.navigateTo.bind(this, 'movements')}>Movements</div>
+                < div className="menuBlock" onClick={this.navigateTo.bind(this, 'statistics')}>Statistics</div>
             </div>
         </div>
         if (this.state.currentModule == 'accounts')
