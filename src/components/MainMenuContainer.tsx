@@ -2,15 +2,15 @@ import * as React from 'react';
 import { MenuContainer } from './MenuContainer';
 import {AccountsComponent} from './AccountsComponent';
 
-export class MainMenuContainer extends React.Component<IMainMenuContainer, IMainMenuContainerState> {
+export class MainMenuContainer extends React.Component<IMainMenuContainerProps, IMainMenuContainerState> {
     public state: IMainMenuContainerState;
-    constructor() {
-        super();
-        this.state = { currentModule: '' };
+    constructor(props: any) {
+        super(props);
+        this.state = {currentModule: ''};
     }
     render() {
         if (this.state.currentModule == '')
-            return <div><MenuContainer /></div>
+            return <div><MenuContainer menus={this.props.menus}/></div>
         if (this.state.currentModule == 'accounts')
             return (
                 <div>

@@ -8,7 +8,7 @@ export class MyNumbers extends React.Component<IMyNumbersComponent, IMyNumbersSt
                 <div className="titleBlock">
                     <h1>{this.props.title}</h1>
                 </div>
-                <MainMenuContainer currentModule=""/>
+                <MainMenuContainer menus={this.props.menus} currentModule=""/>
             </div>
         );
     }

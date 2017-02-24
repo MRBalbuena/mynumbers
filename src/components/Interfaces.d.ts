@@ -1,21 +1,32 @@
 
-interface IMainMenuContainer extends IContainer{}
-interface IMainMenuContainerState extends IContainer{}    
+interface IMainMenuContainerProps extends IContainerState { }
+interface IMainMenuContainerState extends IContainerState { }
 
-interface IMenuContainer{}
+interface IContainerState {
+    currentModule: string;
+    menus?: IMainMenu[];
+}
 
-interface IContainer{
+interface IMenuContainer { 
+    menus: IMainMenu[];
+}
+
+interface IMyNumbersComponent {
+    title: string;
+    menus: IMainMenu[];    
+}
+
+interface IMainMenu {
+    "id": string;
+    "title": string;
+    "position": number;
+    "backgroundColor": string;
+}
+
+interface IMyNumbersState {
     currentModule: string;
 }
 
-interface IMyNumbersComponent {    
-    title : string;
-}
+interface IAccountsContainer { }
 
-interface IMyNumbersState{
-    currentModule: string;
-}
-
-interface IAccountsContainer {}
-
-interface IAccountContainerState {}
+interface IAccountContainerState { }
